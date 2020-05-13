@@ -1,0 +1,8 @@
+<tr>
+  <td><%= banana.name %></td>
+  <td><%= banana.address %></td>
+  <td><%= banana.stars %></td>
+  <td><%= link_to 'Show', banana %></td>
+  <td><%= link_to 'Edit', edit_restaurant_path(banana) %></td>
+  <td><%= link_to 'Destroy', banana, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

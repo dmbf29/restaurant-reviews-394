@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<p>
+  <strong>Stars:</strong>
+  <%= @restaurant.stars %>
+</p>
+
+<h3>Reviews</h3>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item">
+      <div class="d-flex justify-content-between">
+        <%= review.content %>
+        <%= link_to "remove", review_path(review), method: :delete, data: { confirm: 'delete?'}  %>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New review", new_restaurant_review_path(@restaurant), class: 'btn btn-light'  %>
+
+<%= link_to "Chef page", chef_restaurant_path(@restaurant)  %>
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Back', restaurants_path %>
